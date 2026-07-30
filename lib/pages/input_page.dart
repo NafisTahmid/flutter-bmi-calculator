@@ -217,12 +217,13 @@ class _InputPageState extends State<InputPage> {
                 weight: weight,
                 height: height,
               );
+              String bmi = calc.calculateBMI();
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => CalculatePage(
+                    bmiResult: bmi,
                     result: calc.getResults(),
-                    bmiResult: calc.calculateBMI(),
                     suggestion: calc.getSuggestions(),
                   ),
                 ),
